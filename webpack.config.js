@@ -69,6 +69,10 @@ module.exports = function makeWebpackConfig() {
   config.resolve = {
     // only discover files that have those extensions
     extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
+	alias: {
+            jquery: "jquery/src/jquery",
+			tether: "tether/dist/js/tether.js"
+        }
   };
 
   var atlOptions = '';
@@ -125,7 +129,15 @@ module.exports = function makeWebpackConfig() {
 
       // support for .html as raw text
       // todo: change the loader to something that adds a hash to images
-      {test: /\.html$/, loader: 'raw-loader',  exclude: root('src', 'public')}
+      {test: /\.html$/, loader: 'raw-loader',  exclude: root('src', 'public')},
+	  {
+            test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+            loader: "imports?this=>window"
+        },
+		{
+            test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
+            loader: "imports?define=>false"
+        }
     ]
   };
 
@@ -163,7 +175,13 @@ module.exports = function makeWebpackConfig() {
         ENV: JSON.stringify(ENV)
       }
     }),
-
+	new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+			"window.jQuery": "jquery",
+			"Tether": 'tether',
+            "window.Tether": "tether"
+        }),
     // Workaround needed for angular 2 angular/angular#11580
       new webpack.ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
