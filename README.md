@@ -4,6 +4,8 @@
 
 [Is Angular 2 Ready Yet?](http://splintercode.github.io/is-angular-2-ready/)
 
+Base code courtesy of https://github.com/preboot/angular2-webpack
+
 ### Quick start
 
 > Clone/Download the repo then edit `app.ts` inside [`/src/app/app.component.ts`](/src/app/app.component.ts)
