@@ -10,7 +10,7 @@
 
 ```bash
 # clone our repo
-$ git clone https://github.com/preboot/angular2-webpack.git my-app
+$ https://github.com/jgiunti/angular2-webpack-bootsrapv4-starter.git
 
 # change directory to your app
 $ cd my-app
