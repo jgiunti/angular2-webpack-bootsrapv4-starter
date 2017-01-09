@@ -7,7 +7,7 @@
     "sourceMap": true,
     "noEmitHelpers": true
   },
-  "compileOnSave": false,
+  "compileOnSave": true,
   "buildOnSave": false,
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
