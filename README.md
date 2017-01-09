@@ -20,9 +20,6 @@ $ cd my-app
 # install the dependencies with npm
 $ npm install
 
-# install bootstrap v4
-$ npm install bootstrap@4.0.0-alpha.6
-
 # start the server
 $ npm start
 ```
